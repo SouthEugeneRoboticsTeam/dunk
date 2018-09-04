@@ -13,7 +13,7 @@ FIND_PACKAGE(MRPT REQUIRED hwdrivers obs slam config system io opengl gui)
 ADD_EXECUTABLE(dunk
         slam.cpp
         json.cpp
-        Server.cpp)
+        UDPClient.cpp)
 TARGET_LINK_LIBRARIES(dunk ${MRPT_LIBS})
 
 # Set optimized building:

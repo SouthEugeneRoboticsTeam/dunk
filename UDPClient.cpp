@@ -3,9 +3,9 @@
 //
 
 #include <cstring>
-#include "Server.h"
+#include "UDPClient.h"
 
-Server::Server(string host, uint16_t port) {
+UDPClient::UDPClient(string host, uint16_t port) {
     socket_i = socket(AF_INET, SOCK_DGRAM, 0);
     if (socket_i < 0) {
         perror("Could not create a UDP socket");
@@ -19,7 +19,7 @@ Server::Server(string host, uint16_t port) {
     connected = true;
 }
 
-void Server::send(string msg) {
+void UDPClient::send(string msg) {
     if (!connected) return;
     auto msg_str = msg.c_str();
     if (sendto(socket_i, msg_str, strlen(msg_str)+1, 0, // +1 to include terminator

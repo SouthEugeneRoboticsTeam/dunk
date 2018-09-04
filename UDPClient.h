@@ -18,13 +18,13 @@
 
 using namespace std;
 
-class Server {
+class UDPClient {
     sockaddr_in roborio_addr;
     int socket_i;
     bool connected = false;
 
     public:
-        Server(string host, uint16_t port);
+        UDPClient(string host, uint16_t port);
         void send(string msg);
 };
 
