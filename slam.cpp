@@ -14,6 +14,11 @@
 #include <mrpt/gui/CDisplayWindow3D.h>
 #include <string>
 #include <vector>
+#include "json.h"
+#include "Server.h"
+
+#define ROBORIO_HOST "10.25.21.2"
+#define ROBORIO_PORT 5800
 
 using namespace mrpt;
 using namespace mrpt::opengl;
@@ -136,6 +141,7 @@ void SensorThread(TThreadParams params) {
 }
 
 void MapBuilding_ICP_Live(const string& INI_FILENAME) {
+  auto server = Server(ROBORIO_HOST, ROBORIO_PORT);
   MRPT_START
 
   using namespace mrpt::slam;
@@ -298,6 +304,9 @@ void MapBuilding_ICP_Live(const string& INI_FILENAME) {
     cout << "x: " << robotPose.x() << ", " <<
             "y: " << robotPose.y() << ", " <<
             "angle: " << RAD2DEG(robotPose.yaw()) << endl;
+
+    // Send to port via UDP
+    server.send(build_json_msg(robotPose.x(), robotPose.y(), RAD2DEG(robotPose.yaw())));
 
     // Save a 3D scene view of the mapping process:
     if (0 == (step % LOG_FREQUENCY) || (SAVE_3D_SCENE || win3D)) {
