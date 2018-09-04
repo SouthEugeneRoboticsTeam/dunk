@@ -306,7 +306,7 @@ void MapBuilding_ICP_Live(const string& INI_FILENAME) {
             "angle: " << RAD2DEG(robotPose.yaw()) << endl;
 
     // Send to port via UDP
-    client.send(build_json_msg(robotPose.x(), robotPose.y(), RAD2DEG(robotPose.yaw())));
+    client.send(json_message(robotPose.x(), robotPose.y(), RAD2DEG(robotPose.yaw())));
 
     // Save a 3D scene view of the mapping process:
     if (0 == (step % LOG_FREQUENCY) || (SAVE_3D_SCENE || win3D)) {

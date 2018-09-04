@@ -4,6 +4,6 @@
 #include <string>
 using namespace std;
 
-string build_json_msg(double x, double y, double angle);
+string json_message(double x, double y, double angle);
 
 #endif //DUNK_JSON_H
