@@ -5,8 +5,6 @@
 #ifndef DUNK_SERVER_H
 #define DUNK_SERVER_H
 
-
-
 #include <stdio.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -27,6 +25,5 @@ class UDPClient {
         UDPClient(string host, uint16_t port);
         void send(string msg);
 };
-
 
 #endif //DUNK_SERVER_H

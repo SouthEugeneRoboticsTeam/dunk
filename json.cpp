@@ -1,6 +1,6 @@
 #include "json.h"
 
-string build_json_msg(double x, double y, double angle) {
+string json_message(double x, double y, double angle) {
     string tmp = "{";
     tmp += string( "\"x\":") + to_string(x);
     tmp += string(",\"y\":") + to_string(y);
