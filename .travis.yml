@@ -7,7 +7,7 @@ before_script:
   - export REPOSITORY_NAME=${PWD##*/}
   - export CODECOV_VARS=$(bash <(curl -s https://codecov.io/env))
   - export BUILD_TYPE=Debug
-  - docker build -t "sert:dunk" .
+  - docker build -t "sert/dunk:latest" .
   - docker images
 
 script:
