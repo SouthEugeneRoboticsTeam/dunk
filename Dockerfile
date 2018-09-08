@@ -10,4 +10,4 @@ RUN apt-get update && \
     apt-get install -y libmrpt-dev mrpt-apps
 
 # Install linting tools
-RUN apt-get install cppcheck -y
+RUN apt-get install -y cppcheck
