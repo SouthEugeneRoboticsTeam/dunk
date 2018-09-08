@@ -10,7 +10,7 @@ before_script:
   - docker images
 
 script:
-  - travis/travis_docker.sh
+  - bash travis/travis_docker.sh
 
 jobs:
   include:
@@ -31,29 +31,4 @@ jobs:
     - env: STAGE=2 TASK="build" DEPS="headless" BUILD_TARGET="mrpt-hmtslam"
       compiler: gcc
     - env: STAGE=2 TASK="build" DEPS="minimal" BUILD_TARGET="mrpt-hmtslam"
-      compiler: gcc
-    - stage: Tests, Examples, apps
-      env: STAGE=3 TASK="test" DEPS="full"
-      compiler: gcc
-    - env: STAGE=3 TASK="test" DEPS="full"
-      compiler: clang
-    - env: STAGE=3 TASK="test" DEPS="headless"
-      compiler: gcc
-    - env: STAGE=3 TASK="test" DEPS="minimal"
-      compiler: gcc
-    - env: STAGE=3 TASK="build" DEPS="full" BUILD_TARGET="examples"
-      compiler: gcc
-    - env: STAGE=3 TASK="build" DEPS="full" BUILD_TARGET="examples"
-      compiler: clang
-    - env: STAGE=3 TASK="build" DEPS="headless" BUILD_TARGET="examples"
-      compiler: gcc
-    - env: STAGE=3 TASK="build" DEPS="minimal" BUILD_TARGET="examples"
-      compiler: gcc
-    - env: STAGE=3 TASK="build" DEPS="full" BUILD_TARGET="apps"
-      compiler: gcc
-    - env: STAGE=3 TASK="build" DEPS="full" BUILD_TARGET="apps"
-      compiler: clang
-    - env: STAGE=3 TASK="build" DEPS="headless" BUILD_TARGET="apps"
-      compiler: gcc
-    - env: STAGE=3 TASK="build" DEPS="minimal" BUILD_TARGET="apps"
       compiler: gcc
