@@ -1,6 +1,8 @@
 FROM mrpt/mrpt-build-env:minimal-bionic
 
-RUN apt-get install software-properties-common -y && \
-    add-apt-repository ppa:joseluisblancoc/mrpt -y && \
+RUN apt-get update && \
+    apt-get install -y software-properties-common \
+      python-software-properties && \
+    add-apt-repository -y ppa:joseluisblancoc/mrpt && \
     apt-get update && \
-    apt-get install libmrpt-dev mrpt-apps -y
+    apt-get install -y libmrpt-dev mrpt-apps
