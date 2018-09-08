@@ -7,28 +7,8 @@ before_script:
   - export REPOSITORY_NAME=${PWD##*/}
   - export CODECOV_VARS=$(bash <(curl -s https://codecov.io/env))
   - export BUILD_TYPE=Debug
+  - docker build -t "sert:dunk" .
   - docker images
 
 script:
   - bash travis/travis_docker.sh
-
-jobs:
-  include:
-    - stage: Build libs (stage 1/2)
-      env: STAGE=1 TASK="build" DEPS="full" BUILD_TARGET="mrpt-hwdrivers"
-      compiler: gcc
-    - env: STAGE=1 TASK="build" DEPS="full" BUILD_TARGET="mrpt-hwdrivers"
-      compiler: clang
-    - env: STAGE=1 TASK="build" DEPS="headless" BUILD_TARGET="mrpt-hwdrivers"
-      compiler: gcc
-    - env: STAGE=1 TASK="build" DEPS="minimal" BUILD_TARGET="mrpt-hwdrivers"
-      compiler: gcc
-    - stage: Build libs (stage 2/2)
-      env: STAGE=2 TASK="build" DEPS="full" BUILD_TARGET="mrpt-hmtslam"
-      compiler: gcc
-    - env: STAGE=2 TASK="build" DEPS="full" BUILD_TARGET="mrpt-hmtslam"
-      compiler: clang
-    - env: STAGE=2 TASK="build" DEPS="headless" BUILD_TARGET="mrpt-hmtslam"
-      compiler: gcc
-    - env: STAGE=2 TASK="build" DEPS="minimal" BUILD_TARGET="mrpt-hmtslam"
-      compiler: gcc
