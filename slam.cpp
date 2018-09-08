@@ -179,7 +179,7 @@ void MapBuilding_ICP_Live(const string& INI_FILENAME) {
     "MappingApplication", "SAVE_RAWLOG", true, /*Force existence:*/ false);
 
   bool SHOW_PROGRESS_3D_REAL_TIME = false;
-  int SHOW_PROGRESS_3D_REAL_TIME_DELAY_MS =
+  int SHOW_PROGRESS_3D_REAL_TIME_DELAY_MS = 0;
   bool SHOW_LASER_SCANS_3D = true;
 
   MRPT_LOAD_CONFIG_VAR(
