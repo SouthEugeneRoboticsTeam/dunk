@@ -12,8 +12,8 @@
 
 Before building, ensure you have [MRPT](https://github.com/MRPT/mrpt) 2.x
 installed. MRPT requires Ubuntu 16.04 or later. If using Ubuntu 16.04, you'll
-also need to install gcc-7. Instructions on install gcc-7 are available in the
-[MRPT documentation](https://github.com/MRPT/mrpt#31-ubuntu).
+also need to install gcc-7. Instructions on installing gcc-7 are available in
+the [MRPT documentation](https://github.com/MRPT/mrpt#31-ubuntu).
 
 To get the latest version of MRPT, either build it from source or install it
 using `apt-get`:
