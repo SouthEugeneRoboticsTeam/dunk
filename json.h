@@ -6,4 +6,4 @@ using namespace std;
 
 string json_message(double x, double y, double angle);
 
-#endif //DUNK_JSON_H
+#endif
