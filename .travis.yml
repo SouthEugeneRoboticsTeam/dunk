@@ -1,0 +1,14 @@
+language: cpp
+sudo: required
+dist: trusty
+
+before_script:
+  - export CI_SOURCE_PATH=$(pwd)
+  - export REPOSITORY_NAME=${PWD##*/}
+  - export CODECOV_VARS=$(bash <(curl -s https://codecov.io/env))
+  - export BUILD_TYPE=Debug
+  - docker build -t "sert/dunk:latest" .
+  - docker images
+
+script:
+  - bash travis/travis_docker.sh

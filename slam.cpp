@@ -147,6 +147,8 @@ void MapBuilding_ICP_Live(const string& INI_FILENAME) {
   using namespace mrpt::slam;
   using namespace mrpt::obs;
   using namespace mrpt::maps;
+  
+  auto client = UDPClient(ROBORIO_HOST, ROBORIO_PORT);
 
   mrpt::config::CConfigFile iniFile(INI_FILENAME);
 
