@@ -6,7 +6,7 @@ string json_message(double x, double y, double angle) {
   gettimeofday(&tp, NULL);
 
   string json = "{";
-  json += string(" \"type\":\"slam\"");
+  json += string("\"type\":\"slam\"");
   json += string(",\"x\":") + to_string(x);
   json += string(",\"y\":") + to_string(y);
   json += string(",\"angle\":") + to_string(angle);
