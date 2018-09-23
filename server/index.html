@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SLAM Live</title>
+</head>
+<body>
+  <img id="map" src="map.bmp" />
+
+  <script type="text/javascript">
+    function refresh() {
+      var map = document.getElementById('map');
+      map.src = map.src.split('?')[0] + '?time=' + Date.now()
+    }
+
+    setInterval(refresh, 500)
+  </script>
+</body>
+</html>
