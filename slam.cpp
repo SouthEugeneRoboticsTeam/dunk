@@ -11,6 +11,11 @@
 #include <string>
 #include <vector>
 #include <signal.h>
+#include "json.h"
+#include "UDPClient.h"
+
+#define ROBORIO_HOST "10.25.21.2"
+#define ROBORIO_PORT 5800
 
 using namespace mrpt;
 using namespace mrpt::poses;
@@ -139,11 +144,14 @@ void SensorThread(TThreadParams params) {
 }
 
 void MapBuilding_ICP_Live(const string& INI_FILENAME) {
+  auto client = UDPClient(ROBORIO_HOST, ROBORIO_PORT);
   MRPT_START
 
   using namespace mrpt::slam;
   using namespace mrpt::obs;
   using namespace mrpt::maps;
+  
+  auto client = UDPClient(ROBORIO_HOST, ROBORIO_PORT);
 
   mrpt::config::CConfigFile iniFile(INI_FILENAME);
 
@@ -260,6 +268,9 @@ void MapBuilding_ICP_Live(const string& INI_FILENAME) {
             "y: " << robotPose.y() << ", " <<
             "angle: " << RAD2DEG(robotPose.yaw()) << endl;
 
+    // Send to port via UDP
+    client.send(json_message(robotPose.x(), robotPose.y(), RAD2DEG(robotPose.yaw())));
+    
     if ((step % LOG_FREQUENCY) == 0 && SAVE_IMAGE) {
       CSimpleMap map;
       mapBuilder.getCurrentlyBuiltMap(map);
