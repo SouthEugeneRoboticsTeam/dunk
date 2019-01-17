@@ -7,7 +7,7 @@ endif()
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
-FIND_PACKAGE(MRPT REQUIRED hwdrivers obs slam config system io opengl gui)
+FIND_PACKAGE(MRPT COMPONENTS hwdrivers obs slam config system io opengl gui)
 
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
