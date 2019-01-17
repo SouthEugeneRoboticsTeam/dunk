@@ -4,6 +4,12 @@
   </a>
 </p>
 
+<p align="center">
+    <a href="https://sert2521.org"><img alt="team 2521" src="https://img.shields.io/badge/team-2521-7d26cd.svg?style=flat-square" /></a>
+    <a href="https://github.com/SouthEugeneRoboticsTeam/dunk/blob/master/LICENSE"><img alt="team 2521" src="https://img.shields.io/github/license/SouthEugeneRoboticsTeam/dunk.svg?style=flat-square" /></a>
+    <a href="https://travis-ci.org/SouthEugeneRoboticsTeam/dunk"><img alt="team 2521" src="https://img.shields.io/travis/SouthEugeneRoboticsTeam/dunk/master.svg?style=flat-square" /></a>
+</p>
+
 <h4 align="center">
   A fast ICP SLAM implementation for FRC robots.
 </h4>
