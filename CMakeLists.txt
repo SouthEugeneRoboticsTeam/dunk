@@ -7,14 +7,28 @@ endif()
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
-FIND_PACKAGE(MRPT COMPONENTS hwdrivers obs slam config system io gui)
+FIND_PACKAGE(mrpt-hwdrivers)
+FIND_PACKAGE(mrpt-obs)
+FIND_PACKAGE(mrpt-slam)
+FIND_PACKAGE(mrpt-config)
+FIND_PACKAGE(mrpt-system)
+FIND_PACKAGE(mrpt-io)
+FIND_PACKAGE(mrpt-gui)
 
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
-        slam.cpp
-        json.cpp
-        UDPClient.cpp)
-TARGET_LINK_LIBRARIES(dunk ${MRPT_LIBS})
+  slam.cpp
+  json.cpp
+  UDPClient.cpp)
+TARGET_LINK_LIBRARIES(dunk
+  mrpt::hwdrivers
+  mrpt::obs
+  mrpt::slam
+  mrpt::config
+  mrpt::system
+  mrpt::io
+  mrpt::gui
+)
 
 # Set optimized building:
 IF(CMAKE_COMPILER_IS_GNUCXX AND NOT CMAKE_BUILD_TYPE MATCHES "Debug")
