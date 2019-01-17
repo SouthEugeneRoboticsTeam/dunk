@@ -7,14 +7,7 @@ endif()
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
-FIND_PACKAGE(mrpt-base)
-FIND_PACKAGE(mrpt-hwdrivers)
-FIND_PACKAGE(mrpt-obs)
-FIND_PACKAGE(mrpt-slam)
-FIND_PACKAGE(mrpt-config)
-FIND_PACKAGE(mrpt-system)
-FIND_PACKAGE(mrpt-io)
-FIND_PACKAGE(mrpt-gui)
+FIND_PACKAGE(MRPT 1.9.9 COMPONENTS base hwdrivers obs slam config system io gui)
 
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
