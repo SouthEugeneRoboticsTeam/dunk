@@ -15,7 +15,14 @@ ADD_EXECUTABLE(dunk
   json.cpp
   UDPClient.cpp)
 TARGET_LINK_LIBRARIES(dunk
-  mrpt::hwdrivers)
+  mrpt::base
+  mrpt::hwdrivers
+  mrpt::obs
+  mrpt::slam
+  mrpt::config
+  mrpt::system
+  mrpt::io
+  mrpt::gui)
 
 # Set optimized building:
 IF(CMAKE_COMPILER_IS_GNUCXX AND NOT CMAKE_BUILD_TYPE MATCHES "Debug")
