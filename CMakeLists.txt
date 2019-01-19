@@ -1,13 +1,10 @@
 PROJECT(dunk)
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.7)
-if(COMMAND cmake_policy)
-  cmake_policy(SET CMP0003 NEW)  # Required by CMake 2.7+
-endif()
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
-FIND_PACKAGE(MRPT 1.9.9 COMPONENTS hwdrivers obs slam config system io opengl gui)
+FIND_PACKAGE(MRPT COMPONENTS hwdrivers obs slam config system io opengl gui) 
 
 message(STATUS "MRPT_VERSION: ${MRPT_VERSION}")
 message(STATUS "MRPT_LIBRARIES: ${MRPT_LIBRARIES}")
