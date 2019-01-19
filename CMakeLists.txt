@@ -16,6 +16,9 @@ FIND_PACKAGE(mrpt-io REQUIRED)
 FIND_PACKAGE(mrpt-opengl REQUIRED)
 FIND_PACKAGE(mrpt-gui REQUIRED)
 
+message(STATUS "MRPT_VERSION: ${MRPT_VERSION}")
+message(STATUS "MRPT_LIBRARIES: ${MRPT_LIBRARIES}")
+
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
         slam.cpp
