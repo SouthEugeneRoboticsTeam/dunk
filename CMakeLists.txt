@@ -7,14 +7,7 @@ endif()
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
-FIND_PACKAGE(mrpt-hwdrivers REQUIRED)
-FIND_PACKAGE(mrpt-obs REQUIRED)
-FIND_PACKAGE(mrpt-slam REQUIRED)
-FIND_PACKAGE(mrpt-config REQUIRED)
-FIND_PACKAGE(mrpt-system REQUIRED)
-FIND_PACKAGE(mrpt-io REQUIRED)
-FIND_PACKAGE(mrpt-opengl REQUIRED)
-FIND_PACKAGE(mrpt-gui REQUIRED)
+FIND_PACKAGE(MRPT 1.9.9 COMPONENTS hwdrivers obs slam config system io opengl gui)
 
 message(STATUS "MRPT_VERSION: ${MRPT_VERSION}")
 message(STATUS "MRPT_LIBRARIES: ${MRPT_LIBRARIES}")
