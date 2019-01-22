@@ -4,6 +4,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
+FIND_PACKAGE(mrpt-hwdrivers)
 FIND_PACKAGE(MRPT COMPONENTS hwdrivers obs slam config system io opengl gui) 
 
 message(STATUS "MRPT_VERSION: ${MRPT_VERSION}")
@@ -14,7 +15,7 @@ ADD_EXECUTABLE(dunk
         slam.cpp
         json.cpp
         UDPClient.cpp)
-TARGET_LINK_LIBRARIES(dunk ${MRPT_LIBRARIES})
+TARGET_LINK_LIBRARIES(dunk ${MRPT_LIBRARIES} mrpt::hwdrivers)
 
 # Set optimized building:
 IF(CMAKE_COMPILER_IS_GNUCXX AND NOT CMAKE_BUILD_TYPE MATCHES "Debug")
