@@ -9,6 +9,7 @@
 #include <mrpt/system/filesystem.h>
 #include <string>
 #include <vector>
+#include <thread>
 #include <signal.h>
 #include "json.h"
 #include "UDPClient.h"
