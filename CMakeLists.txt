@@ -4,7 +4,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
-FIND_PACKAGE(MRPT 1.9.9 COMPONENTS hwdrivers obs slam config system io gui)
+FIND_PACKAGE(MRPT 1.9.9 COMPONENTS hwdrivers obs slam config system io)
 
 message(STATUS "MRPT_VERSION: ${MRPT_VERSION}")
 message(STATUS "MRPT_LIBRARIES: ${MRPT_LIBRARIES}")
