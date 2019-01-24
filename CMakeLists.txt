@@ -13,7 +13,7 @@ FIND_PACKAGE(mrpt-system REQUIRED)
 FIND_PACKAGE(mrpt-io REQUIRED)
 FIND_PACKAGE(mrpt-opengl REQUIRED)
 FIND_PACKAGE(mrpt-gui REQUIRED)
-
+FIND_PACKAGE(mrpt-utils REQUIRED)
 
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
@@ -29,6 +29,8 @@ TARGET_LINK_LIBRARIES(dunk
   mrpt::io
   mrpt::opengl
   mrpt::gui
+  mrpt::utils
+
 )
 
 message(STATUS "MRPT_VERSION: ${MRPT_VERSION}")
