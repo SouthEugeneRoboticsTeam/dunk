@@ -2,7 +2,7 @@ PROJECT(dunk)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
 FIND_PACKAGE(MRPT 1.9.9 COMPONENTS hwdrivers obs slam config system io opengl gui)
 
