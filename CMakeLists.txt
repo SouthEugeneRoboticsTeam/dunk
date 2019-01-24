@@ -13,7 +13,7 @@ FIND_PACKAGE(mrpt-system REQUIRED)
 FIND_PACKAGE(mrpt-io REQUIRED)
 FIND_PACKAGE(mrpt-opengl REQUIRED)
 FIND_PACKAGE(mrpt-gui REQUIRED)
-FIND_PACKAGE(mrpt-utils REQUIRED)
+FIND_PACKAGE(mrpt-base REQUIRED)
 
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
