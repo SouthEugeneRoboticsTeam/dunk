@@ -7,7 +7,6 @@
 #include <mrpt/io/CFileOutputStream.h>
 #include <mrpt/system/os.h>
 #include <mrpt/system/filesystem.h>
-#include <mrpt/gui/CDisplayWindow3D.h>
 #include <string>
 #include <vector>
 #include <signal.h>
