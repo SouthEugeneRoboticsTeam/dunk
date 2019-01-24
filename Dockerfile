@@ -1,4 +1,4 @@
-FROM mrpt/mrpt-build-env:minimal
+FROM mrpt/mrpt-build-env:minimal-bionic
 
 ENV DEBIAN_FRONTEND noninteractive
 
