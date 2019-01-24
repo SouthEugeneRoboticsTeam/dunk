@@ -11,9 +11,7 @@ message(STATUS "MRPT_LIBRARIES: ${MRPT_LIBRARIES}")
 
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
-        slam.cpp
-        json.cpp
-        UDPClient.cpp)
+        slam.cpp)
 TARGET_LINK_LIBRARIES(dunk ${MRPT_LIBRARIES})
 
 # Set optimized building:
