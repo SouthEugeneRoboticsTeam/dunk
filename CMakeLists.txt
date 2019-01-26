@@ -1,20 +1,18 @@
 PROJECT(dunk)
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
-if(COMMAND cmake_policy)
-  cmake_policy(SET CMP0003 NEW)  # Required by CMake 2.7+
-endif()
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
-FIND_PACKAGE(MRPT REQUIRED hwdrivers obs slam config system io opengl gui)
+FIND_PACKAGE(MRPT 1.9.9 COMPONENTS hwdrivers obs slam config system io)
+
+message(STATUS "MRPT_VERSION: ${MRPT_VERSION}")
+message(STATUS "MRPT_LIBRARIES: ${MRPT_LIBRARIES}")
 
 # Declare the target (an executable)
 ADD_EXECUTABLE(dunk
-        slam.cpp
-        json.cpp
-        UDPClient.cpp)
-TARGET_LINK_LIBRARIES(dunk ${MRPT_LIBS})
+        slam.cpp)
+TARGET_LINK_LIBRARIES(dunk ${MRPT_LIBRARIES})
 
 # Set optimized building:
 IF(CMAKE_COMPILER_IS_GNUCXX AND NOT CMAKE_BUILD_TYPE MATCHES "Debug")

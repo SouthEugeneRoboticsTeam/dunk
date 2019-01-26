@@ -7,12 +7,10 @@
 #include <mrpt/io/CFileOutputStream.h>
 #include <mrpt/system/os.h>
 #include <mrpt/system/filesystem.h>
-#include <mrpt/gui/CDisplayWindow3D.h>
 #include <string>
 #include <vector>
+#include <thread>
 #include <signal.h>
-#include "json.h"
-#include "UDPClient.h"
 
 #define ROBORIO_HOST "10.25.21.2"
 #define ROBORIO_PORT 5800
@@ -144,15 +142,13 @@ void SensorThread(TThreadParams params) {
 }
 
 void MapBuilding_ICP_Live(const string& INI_FILENAME) {
-  auto client = UDPClient(ROBORIO_HOST, ROBORIO_PORT);
+//  auto client = UDPClient(ROBORIO_HOST, ROBORIO_PORT);
   MRPT_START
 
   using namespace mrpt::slam;
   using namespace mrpt::obs;
   using namespace mrpt::maps;
   
-  auto client = UDPClient(ROBORIO_HOST, ROBORIO_PORT);
-
   mrpt::config::CConfigFile iniFile(INI_FILENAME);
 
   // Load sensor params from section: "LIDAR_SENSOR"
@@ -269,7 +265,7 @@ void MapBuilding_ICP_Live(const string& INI_FILENAME) {
             "angle: " << RAD2DEG(robotPose.yaw()) << endl;
 
     // Send to port via UDP
-    client.send(json_message(robotPose.x(), robotPose.y(), RAD2DEG(robotPose.yaw())));
+//    client.send(json_message(robotPose.x(), robotPose.y(), RAD2DEG(robotPose.yaw())));
     
     if ((step % LOG_FREQUENCY) == 0 && SAVE_IMAGE) {
       CSimpleMap map;
