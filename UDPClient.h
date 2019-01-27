@@ -13,12 +13,13 @@
 using namespace std;
 
 class UDPClient {
-  sockaddr_in roborio_addr;
-  int socket_i;
-  bool connected = false;
+    sockaddr_in roborio_addr;
+    int socket_i;
+    bool connected = false;
 
-  public:
+public:
     UDPClient(string host, uint16_t port);
+
     void send(string msg);
 };
 
